@@ -1,8 +1,8 @@
 # gin-gonic practice
 ## Download source code from git
-``
+```
 git clone git@github.com:k2star0118/practice-gin-gonic.git
-``
+```
 ## Config from intellij
 1. Import: "Project From Existing Source" -> "Gradle"
 2. Preferences Setting: "Preferences" -> "Laugnages & Frameworks -> Go"

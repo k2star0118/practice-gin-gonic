@@ -9,6 +9,7 @@ require (
 	github.com/golang/protobuf v1.2.0 // indirect
 	github.com/mattn/go-isatty v0.0.4 // indirect
 	github.com/pkg/errors v0.8.1 // indirect
+	github.com/stretchr/testify v1.2.2
 	github.com/swaggo/gin-swagger v1.0.0 // indirect
 	github.com/swaggo/swag v1.4.0 // indirect
 	github.com/thoas/go-funk v0.0.0-20181020164546-fbae87fb5b5c // indirect

@@ -15,7 +15,7 @@ import (
 func NewHttpServer(conf *config.AppConfig, waitGroup *sync.WaitGroup) *http.Server {
 	engine := gin.Default()
 	engine.Use(limit.MaxAllowed(config.Get().MaxConnCount))
-	createRoutes(conf, engine)
+	CreateRoutes(conf, engine)
 
 	srv := &http.Server{
 		Addr:    conf.HttpEndpoint,
@@ -34,7 +34,7 @@ func NewHttpServer(conf *config.AppConfig, waitGroup *sync.WaitGroup) *http.Serv
 	return srv
 }
 
-func createRoutes(conf *config.AppConfig, engine *gin.Engine) {
+func CreateRoutes(conf *config.AppConfig, engine *gin.Engine) {
 	{
 		example := engine.Group("/example")
 		{
