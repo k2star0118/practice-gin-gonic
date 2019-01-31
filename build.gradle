@@ -45,31 +45,3 @@ go {
         test 'github.com/golang/mock'
     }
 }
-
-ospackage {
-    packageName = project.name
-    packageGroup = 'Ken Project Group'
-
-    license = 'N/A'
-    url = ''
-    summary = project.name.split('-').collect { it.capitalize() } join(' ')
-    arch = X86_64
-    os = LINUX
-    user = 'root'
-    vendor = 'Ken Vendor'
-    packager = 'Ken Packager'
-
-    into "/product/$project.name"
-
-    from(".gogradle/${project.name}")
-
-    from('docs') {
-        into('docs')
-    }
-
-    from("scripts/${project.name}.service") {
-        into('/usr/lib/systemd/system')
-    }
-
-    link("/product/${project.name}/var/log", "/var/log/product/${project.name}")
-}

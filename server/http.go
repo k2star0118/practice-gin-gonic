@@ -1,10 +1,10 @@
 package server
 
 import (
+	"fmt"
 	"gin-gonic/config"
 	er "gin-gonic/error"
 	"gin-gonic/handler"
-	"fmt"
 	"github.com/aviddiviner/gin-limit"
 	"github.com/gin-gonic/gin"
 	"log"

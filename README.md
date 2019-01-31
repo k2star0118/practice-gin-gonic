@@ -10,16 +10,22 @@ git clone git@github.com:k2star0118/practice-gin-gonic.git
    * GOPAYH: Select a folder, you can create a folder anywhere
    * GO Module (vgo): Check "Enable Go Modules (vgo) integration"
    
-## Run via debug mode
-1. Find "/gin-gonic/main.go", and click mouse right key "Debug 'go build main.go'"
-2. Edit the "go build main.go", change "Working folder" to your project path ".../gin-gonic" and save
-3. Click "debug" to run
+## Build your own docker
+Please Follow the steps
+```
+# Generate vendor folder
+$ go mod vendor
 
-## Try http server
+# Build
+$ docker build --no-cache -t test/gin-gonic .
 ```
-curl -X GET http://localhost:8888/example
+
+## Run your container
 ```
-You will get the response with json format
-```
+# Run the image
+$ docker run -d -p 8888:8888 test/gin-gonic
+
+# Test
+$ curl http://localhost:8888
 {"message":"Successfully to query get example"}
 ```
