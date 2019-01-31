@@ -11,6 +11,9 @@ WORKDIR /gin-gonic
 ENV APP_HTTPENDPOINT=:31001
 ENV APP_DEV=true
 ENV APP_LOG_LEVEL=info
+ENV ENABLE_GET=true
+ENV ENABLE_PUT=false
+
 # Complete settings, refer to config.go
 
 WORKDIR /root/

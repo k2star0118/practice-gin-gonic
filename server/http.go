@@ -39,6 +39,8 @@ func CreateRoutes(conf *config.AppConfig, engine *gin.Engine) {
 		example := engine.Group("/example")
 		{
 			example.GET("", handler.GetExample)
+			example.PUT("", handler.PutExample)
 		}
+
 	}
 }

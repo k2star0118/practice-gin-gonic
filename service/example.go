@@ -19,6 +19,7 @@ func GetExampleService() IExampleService {
 
 type IExampleService interface {
 	GetExample() (*model.ExampleMessage, error)
+	PutExample() (*model.ExampleMessage, error)
 }
 
 type ExampleService struct {
@@ -27,6 +28,13 @@ type ExampleService struct {
 func (*ExampleService) GetExample() (*model.ExampleMessage, error) {
 	exampleMessage := &model.ExampleMessage{
 		Message: "Successfully to query get example",
+	}
+	return exampleMessage, nil
+}
+
+func (*ExampleService) PutExample() (*model.ExampleMessage, error) {
+	exampleMessage := &model.ExampleMessage{
+		Message: "Successfully to query put example",
 	}
 	return exampleMessage, nil
 }
