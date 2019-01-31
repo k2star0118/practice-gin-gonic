@@ -1,10 +1,9 @@
-package test
+package server
 
 import (
 	"encoding/json"
 	"gin-gonic/config"
 	"gin-gonic/model"
-	"gin-gonic/server"
 	"gin-gonic/service"
 	"github.com/aviddiviner/gin-limit"
 	"github.com/gin-gonic/gin"
@@ -32,7 +31,7 @@ func TestGetExample(t *testing.T) {
 	engine := gin.Default()
 	engine.Use(limit.MaxAllowed(config.Get().MaxConnCount))
 	appConfig := config.Get()
-	server.CreateRoutes(appConfig, engine)
+	CreateRoutes(appConfig, engine)
 	service.Add(service.IExampleServiceType, service.NewExampleService())
 
 	// Perform a GET request with that handler.

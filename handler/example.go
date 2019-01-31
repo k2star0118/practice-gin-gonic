@@ -21,10 +21,13 @@ func GetExample(ctx *gin.Context) {
 		if strings.ToLower(enablePut) == "true" {
 			ctx.JSON(http.StatusOK, ret)
 			return
+		} else {
+			ctx.JSON(http.StatusForbidden, "Does not enable get method")
 		}
 	}
 
-	ctx.JSON(http.StatusForbidden, "Does not enable get method")
+	// default option
+	ctx.JSON(http.StatusOK, ret)
 }
 
 func PutExample(ctx *gin.Context) {
@@ -43,6 +46,7 @@ func PutExample(ctx *gin.Context) {
 		}
 	}
 
+	// default option
 	ctx.JSON(http.StatusForbidden, "Does not enable put method")
 
 }
